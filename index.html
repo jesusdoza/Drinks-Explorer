@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <section id="top">
+        <h1>Drink Lookup</h1>
+        <!-- check box ingredients -->
+        <section>
+            <fieldset>
+                <!-- <legend>Choose the ingredients you want in your drink</legend> -->
+                <label for="ingredient-select"></label>
+                <!-- drop down to select  -->
+                <select name="ingredient-select" id="ingredient-select">
+                    <option value="Default">Choose some ingredients</option>
+                </select>
+    
+            </fieldset>
+        </section>
+        
+            <!-- display ingredient selected -->
+        <section id="choosen-ingrd">
+                <h4>Ingredients Choosen</h4>
+                <p>Click to remove items</p>
+                <ul id="ingredient-choosen">
+                    <li data-value="Applejack">Applejack TEST VALUE</li>
+                </ul>
+                <a id="get-drink" href="#view">Click Here to Search</a>
+        </section>
+       
+
+       
+
+    </section>
+
+
+
+
+
+    
+
+    <main>
+        <h2 id="view">Drinks with ingredient you asked for </h2>
+        <section id="drinks">
+            
+            <ul id="drink-list">
+                <li>
+                    
+                    <section class="drink-container">
+                        TEST DISPLAY DRINK
+                        <div class="drink-image">
+                            <img src="https://www.thecocktaildb.com/images/media/drink/l74qo91582480316.jpg" alt="first-drink">
+                        </div>
+                        <section class="drink-info">
+                            <h3>A. J.</h3>
+                            <!-- <span>17833<br></span> -->
+                            <h4>Category:</h4>
+                            <span>Ordinary Drink</span>
+                            
+                            <h4>Ingredients</h4>
+                            <p>Applejack 1 1/2 oz <br>Grapefruit juice 1 oz <br></p>
+                            <p>Shake ingredients with ice, strain into a cocktail glass, and serve.</p>
+                        </section>
+                       
+                    </section>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script type="text/javascript" src="drink.js"></script>
+</body>
+</html>
