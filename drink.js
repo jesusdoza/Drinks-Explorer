@@ -16,7 +16,7 @@ select.addEventListener('change',addIngredient)
 
 let drinksMatching =new Set;// all drinks matching criteria by id
 let ingredientsChoosen=new Set;  // ingredients user picks
-let fullDrinkDetails= new Set;   // store full drink info for matching drinks
+// let fullDrinkDetails= new Set;   // store full drink info for matching drinks
 let fullIngredientList= new Set; //store ingredients to keep from fetching
 
 let inDom=new Set;// is it already in dom?
@@ -49,6 +49,7 @@ if(newQuery==true){
     //blank drink section for new query
     drinksArea.innerHTML='';
 
+
     //send query for ingredients and so on
     getDrinksByIngredients()
 }
@@ -66,6 +67,56 @@ else{
 }
 
 
+function makeDrinkElement(data_){
+    let name, 
+    id, 
+    category, 
+    image, 
+    instructions,  
+    ingredients;
+
+    // li to put as drink into list in dom
+    let drinkLi = document.createElement('li');
+
+
+    name=data.drinks[0].strDrink;
+    id=data.drinks[0].idDrink;
+    category=data.drinks[0].strCategory;
+    image=data.drinks[0].strDrinkThumb;
+    instructions=data.drinks[0].strInstructions
+
+
+    //restructure ingredients into string for display
+    for(let i =1; i<=15; i++){
+        //if str ingredient is no null then keep going through
+        if(data.drinks[0][ `strIngredient${i}`]){
+            ingredients+=data.drinks[0][`strIngredient${i}`] +" "+ data.drinks[0][`strMeasure${i}`] + '<br>'
+        }
+       
+        
+    }
+
+    drinkLi.innerHTML=`
+    <section class="drink-container">
+         <div class="drink-image">
+             <img src="${image}" alt="drink-picture">
+         </div>
+         <section class="drink-info">
+             <h3>${name}</h3>
+             <span>${id}<br></span>
+             <h4>Category: </>
+             <span>${category}</span>
+             
+             <h4>Ingredients</h4>
+             <p>${ingredients}</p>
+             <p>${instructions}</p>
+         </section>
+     </section>  
+    `//==============================big text string END
+
+
+
+}
 
 
 
@@ -102,7 +153,7 @@ else{
            
             
         }
-      console.log(ingredients)
+    //   console.log(ingredients)
         
 
         // li to put as drink into list in dom
@@ -129,17 +180,18 @@ else{
         //if dom does not already have this ID
        if(!inDom.has(id)){
 
-        let domPlace=document.querySelector('#drink-list')
-        //if already children place before first child
-        if(domPlace.firstChild){
-            let child = domPlace.firstChild;
-            domPlace.insertBefore(drinkLi,child)
-        }
-        else{//else doesnt matter just append
-                domPlace.appendChild(drinkLi);
-        }
+            let domPlace=document.querySelector('#drink-list')
 
-        inDom.add(id)//dont want to add multiples to dom
+            //if already children place before first child
+            if(domPlace.firstChild){
+                let child = domPlace.firstChild;
+                domPlace.insertBefore(drinkLi,child)
+            }
+            else{//else just append since parent is empty
+                    domPlace.appendChild(drinkLi);
+            }
+
+            inDom.add(id)//dont want to add multiples to dom
 
        }//end of if in DOM
        
