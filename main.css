@@ -83,6 +83,7 @@ select{
 
 
 /*                       */
+
 #top{
     background-color: var(--top);
     height: 30%;
@@ -94,7 +95,7 @@ select{
     vertical-align: top;
     text-align: center;
     /* background-color: aquamarine; */
-    height: 40%;
+    /* height: 40%; */
 }
 
 
@@ -152,6 +153,7 @@ section,ul{
 #choosen-ingrd{
     padding: 10px 0;
 }
+
 #choosen-ingrd h4{
     padding: 10px 0;
    
@@ -168,6 +170,10 @@ section,ul{
 
 }
 
+#ingredient-choosen {
+    padding: 20px 0 ;
+}
+
 #ingredient-choosen li:hover{
     cursor: pointer;
     background-color: #cf4d02;
@@ -180,3 +186,45 @@ section,ul{
     border:1px solid green;
 
 }
+
+
+@media screen and (max-width:419px){
+    h1{
+        visibility: hidden;
+        height: 0px;
+    }
+    
+}
+
+@media (min-width:420px){
+    #top{
+        display: flex;
+    }
+    #top section:first-child{
+        width: 40%;
+        border: 1px red solid;
+
+    }
+        #choosen-ingrd h4{
+            padding: 0;
+            margin:0;
+        }
+        #ingredient-select{
+          
+            width: 100%;
+        }
+
+        #ingredient-choosen {
+            padding-top: 10px;
+        }
+
+
+}
+
+@media (min-width:600px){
+    .drink-container{
+        display: flex;
+    }
+
+}
+
