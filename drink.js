@@ -148,9 +148,23 @@ function makeDrinkElement(data_){
         instructions=data.drinks[0].strInstructions
 
         for(let i =1; i<=15; i++){
-            //if str ingredient is no null then keep going through
+            //if str ingredient is not null then keep going through
             if(data.drinks[0][ `strIngredient${i}`]){
-                ingredients+=data.drinks[0][`strIngredient${i}`] +" "+ data.drinks[0][`strMeasure${i}`] + '<br>'
+                
+                // ingredients+=data.drinks[0][`strIngredient${i}`] +" "+ data.drinks[0][`strMeasure${i}`] + '<br>'
+
+                //add drink ingredient to string to use in p element later
+                 ingredients+=data.drinks[0][`strIngredient${i}`] +" ";
+
+                 //if there is a measurement for this ingredient then add to string
+                if(data.drinks[0][`strMeasure${i}`]){
+                    ingredients += data.drinks[0][`strMeasure${i}`] + '<br>'
+                }
+
+                //else no measure for ingredient add line brake to end
+                else{
+                    ingredients+='<br>'
+                }
             }
            
             
