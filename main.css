@@ -12,6 +12,7 @@
     --drink-info:#284b63;
     --choosen:#99C24D;
     --search-button:#89AAE6;
+    --drink-desc:#89AAE6;
 
   }
 
@@ -59,6 +60,10 @@ h4{
 
 
 
+
+
+
+
 /* typography=================
 ===================================================== */
 
@@ -79,10 +84,10 @@ select{
 
 
 
-/* ================================= */
+/* ===============================================
+STRUCTURE
+================================================ */
 
-
-/*                       */
 
 #top{
     background-color: var(--top);
@@ -94,11 +99,8 @@ select{
     width: 100%;
     vertical-align: top;
     text-align: center;
-    /* background-color: aquamarine; */
-    /* height: 40%; */
+  
 }
-
-
 
 main{
     vertical-align: top;
@@ -108,7 +110,7 @@ main{
 
 }
 section,ul{
-    width: inherit;
+    /* width: inherit; */
 }
 
 #drink-list li{
@@ -117,37 +119,11 @@ section,ul{
     text-align: center;
     box-shadow:1px 10px 10px rgb(0, 0, 0);
     padding: 1px;
+    margin-bottom:10px;
 }
 
-.drink-container {
-    width: 98%;
-    background-color: var(--drink-container);
-    margin: 0 auto;
-    padding: 5px;
-}
 
-.drink-image{
-    /* display: inline-block; */
-    width: 100%;
-    vertical-align: top;
-    /* border:black 1px solid; */
-    /* background-color: var(--drink-Image); */
-    padding:5px;
-   
-}
-.drink-image img{
-    width: 100%;
-}
-.drink-container .drink-info{
-    width: 100%;
-    display: inline-block;
-    background-color: var(--drink-info);
-}
-
-.drink-info{
-
-    /* text-shadow: 1px 1px rgb(133, 21, 21); */
-}
+            
 
 
 #choosen-ingrd{
@@ -187,11 +163,46 @@ section,ul{
 
 }
 
+.drink-container {
+    width: 98%;
+    background-color: var(--drink-container);
+    margin: 0 auto;
+    padding: 5px;
+}
+
+        .drink-image{
+            
+            /* height: 100%; */
+            
+            vertical-align: top;
+            width: 100%;
+            
+        
+        
+        }
+            .drink-image img{
+                width: 100%;
+            }
+
+
+        .drink-info{
+            width: 100%;
+            display: inline-block;
+            background-color: var(--drink-info);
+        }
+
+        
+        
 
 @media screen and (max-width:419px){
     h1{
-        visibility: hidden;
-        height: 0px;
+        font-size: 1rem;
+    }
+    fieldset{
+        padding:0;
+    }
+    #ingredient-choosen{
+        padding: 0;
     }
     
 }
@@ -202,8 +213,6 @@ section,ul{
     }
     #top section:first-child{
         width: 40%;
-        border: 1px red solid;
-
     }
         #choosen-ingrd h4{
             padding: 0;
@@ -224,6 +233,25 @@ section,ul{
 @media (min-width:600px){
     .drink-container{
         display: flex;
+        width: 100%;
+        min-height: 300px;
+    }
+    
+    .drink-info{
+        font-size: 1.2rem;
+        /* width: 100%; */
+        flex:1;
+    }
+    .drink-image{
+        flex:1;
+      /* width: 100%; */
+      /* height:  */
+      
+    }
+        
+    .drink-desc{
+        flex:2;
+        /* width:100%; */
     }
 
 }

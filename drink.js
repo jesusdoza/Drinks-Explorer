@@ -66,7 +66,7 @@ else{
 
 }
 
-
+//not implemented yet
 function makeDrinkElement(data_){
     let name, 
     id, 
@@ -101,12 +101,14 @@ function makeDrinkElement(data_){
          <div class="drink-image">
              <img src="${image}" alt="drink-picture">
          </div>
-         <section class="drink-info">
+
+        <section class="drink-info">
              <h3>${name}</h3>
              <span>${id}<br></span>
              <h4>Category: </>
              <span>${category}</span>
-             
+        </section>
+        <section class="drink-desc">
              <h4>Ingredients</h4>
              <p>${ingredients}</p>
              <p>${instructions}</p>
@@ -161,15 +163,17 @@ function makeDrinkElement(data_){
 
        drinkLi.innerHTML=`
        <section class="drink-container">
-            <div class="drink-image">
-                <img src="${image}" alt="drink-picture">
-            </div>
+            
             <section class="drink-info">
                 <h3>${name}</h3>
                 <span>${id}<br></span>
                 <h4>Category: </>
                 <span>${category}</span>
-                
+            </section>
+            <div class="drink-image">
+                <img src="${image}" alt="drink-picture">
+            </div>
+            <section class="drink-desc">   
                 <h4>Ingredients</h4>
                 <p>${ingredients}</p>
                 <p>${instructions}</p>
