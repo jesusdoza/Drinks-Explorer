@@ -3,7 +3,7 @@ simple api implementation using the https://www.thecocktaildb.com/ API
 
 **Link to project:** [Drink Explorer](https://sunny-marzipan-0bacb8.netlify.app/)
 
-![site-img](imges/screen.png)
+![site-img](images/screen.png)
 
 ## How It's Made:
 
